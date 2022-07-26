@@ -71,6 +71,6 @@ AUTO_DELETE_TIME = int(environ.get('AUTO_DELETE_TIME', 300))
 AUTO_DELETE = environ.get('AUTO_DELETE', False)
 if AUTO_DELETE == "True":
     AUTO_DELETE = True
-LONG_DROPLINK_URL = environ.get('LONG_DROPLINK_URL', False)
-IS_SHORT_DROPLINK_URL = environ.get('IS_SHORT_DROPLINK_URL', False)
+LONG_DROPLINK_URL = is_enabled((environ.get('LONG_DROPLINK_URL', "False")), False)
+IS_SHORT_DROPLINK_URL = is_enabled((environ.get('IS_SHORT_DROPLINK_URL', "True")), True)
 SHORTENER_WEBSITE_URL = environ.get('SHORTENER_WEBSITE_URL', 'droplink.co')
